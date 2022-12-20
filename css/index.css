@@ -1,0 +1,88 @@
+section {
+    margin: 100px 0;
+}
+
+.banner {
+    margin-top: 0;
+}
+
+.business-card img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.business-card {
+    height: 400px;
+}
+
+.business-card .card-img-overlay p {
+    font-size: 30px;
+    text-align: right;
+}
+
+.business-card .card-img-overlay {
+    padding: 80px 0 0 0;
+}
+
+@media (min-width: 700px) {
+    .business-card .card-img-overlay {
+        padding: 120px 20px 120px 40%;
+    }
+}
+
+.view-all-catalog {
+    margin: 30px 0;
+}
+
+.view-all-catalog a {
+    font-size: 25px;
+}
+
+.text-about-us {
+    font-size: 20px;
+}
+
+.social-networks a img {
+    width: 100%;
+}
+
+.social-networks a {
+    width: 10%;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.social-networks a:hover {
+    border: 5px solid #3191c8;
+    transform: scale(1.2);
+}
+
+footer img {
+    width: 20px;
+}
+
+.catalog .card{
+    width: 300px;
+    height: 350px;
+}
+
+.catalog .card img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.catalog .card h2 {
+    font-size: 40px;
+    color: white;
+    background-color: #00000071;
+}
+
+.card {
+    transition: 0.3s;
+}
+
+.card:active {
+    transform: scale(1.1);
+}
