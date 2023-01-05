@@ -48,8 +48,9 @@ section {
 
 .social-networks a {
     width: 10%;
-    border-radius: 50px;
+    border-radius: 20%;
     transition: 0.3s;
+    padding: 5px;
 }
 
 .social-networks a:hover {
