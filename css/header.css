@@ -1,0 +1,27 @@
+.search_container ul {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+.search_container li {
+    border: 1px solid #b9bbbb;
+    width: 688px;
+    list-style-type: none;
+    background-color: #F8F9FA;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin: 2px 0px;
+}
+
+.search_container li a{
+    color: black;
+    text-decoration: none;
+}
+
+
+@media (min-width: 990px) {
+    .search_container li {
+        width: 206.4px;
+    }
+}

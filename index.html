@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <script src="js/data.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/search.js" defer></script>
 </head>
 
 <body>
@@ -31,16 +36,20 @@
                             <a class="nav-link active" aria-current="page" href="index.html#home">Главная</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-expanded="false">Каталог</a>
+                            <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-expanded="false">Каталог</a>
                             <ul class="dropdown-menu">
-                                <li><a href="sweaters.html" class="dropdown-item">Кофты</a></li>
-                                <li><a href="overalls.html" class="dropdown-item">Комбинезоны</a></li>
-                                <li><a href="t-shirts.html" class="dropdown-item">Футболки</a></li>
-                                <li><a href="tracksuits.html" class="dropdown-item">Спортивные костюмы</a></li>
-                                <li><a href="mittens.html" class="dropdown-item">Варежки</a></li>
-                                <li><a href="jackets.html" class="dropdown-item">Куртки</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li><a href="detail_catalog.html?topic=sweatshirts" class="dropdown-item">Кофты</a></li>
+                                <li><a href="detail_catalog.html?topic=overalls" class="dropdown-item">Комбинезоны</a>
+                                </li>
+                                <li><a href="detail_catalog.html?topic=t_shirts" class="dropdown-item">Футболки</a></li>
+                                <li><a href="detail_catalog.html?topic=tracksuits" class="dropdown-item">Спортивные
+                                        костюмы</a></li>
+                                <li><a href="detail_catalog.html?topic=mittens" class="dropdown-item">Варежки</a></li>
+                                <li><a href="detail_catalog.html?topic=jackets" class="dropdown-item">Куртки</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a href="catalog.html" class="dropdown-item">Весь каталог</a></li>
                             </ul>
                         </li>
@@ -51,18 +60,25 @@
                             <a class="nav-link" aria-current="page" href="index.html#contacts">Контакты</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-expanded="false"><img src="assets/profile.png" alt="Логотип с профилем" height="25px"></a>
+                            <a class="nav-link text-dark dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-expanded="false"><img src="assets/profile.png"
+                                    alt="Логотип с профилем" height="25px"></a>
                             <ul class="dropdown-menu">
                                 <li><a href="profile.html" class="dropdown-item">Профиль</a></li>
                                 <li><a href="signup.html" class="dropdown-item">Регистрация</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
+                    <div class="search_container">
+                        <form class="d-flex">
+                            <input id="search" class="form-control me-2" type="search" placeholder="Поиск"
+                                aria-label="Поиск">
+                            <!-- <button class="btn btn-outline-success" type="submit">Поиск</button> -->
+                        </form>
+                        <ul class="search_result">
+                            <!-- Здесь будет результат поиска -->
+                        </ul>
+                    </div>
                 </div>
         </nav>
     </header>
@@ -75,7 +91,8 @@
             <div class="card business-card">
                 <img src="assets/desktop.jpg" alt="Рабочий стол ателье" class="">
                 <div class="card-img-overlay">
-                    <p class="animate__animated animate__fadeInRight"><b>Введите название - </b>это что-то там там тотото. Мы на рынке с того-та года. Мы очень крутые.
+                    <p class="animate__animated animate__fadeInRight"><b>Введите название - </b>это что-то там там
+                        тотото. Мы на рынке с того-та года. Мы очень крутые.
                         Купи ченить, а?</p>
                 </div>
             </div>
@@ -86,157 +103,19 @@
             <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
                     <h3 class="text-center">Куртки</h3>
-                    <div class="row row-cols-1 row-cols-md-2 g-3">
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/jacket1.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Пальто</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">4589р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/jacket2.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Жилетка</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">2349р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/jacket3.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Пуховик детский</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">3799р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/jacket4.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Пуховик мужской</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">3599р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="jackets" class="row row-cols-1 row-cols-md-2 g-3">
+
+                        <!-- Сюда js вставит карточки -->
+
                     </div>
                 </div>
 
                 <div class="col">
                     <h3 class="text-center">Кофты</h3>
-                    <div class="row row-cols-1 row-cols-md-2 g-3">
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/sweater1.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Рыжая кофта</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">1589р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/sweater2.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Белая кофта</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">1349р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/sweater3.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Черная кофта</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">1339р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="assets/sweater4.jpg" alt="" class="card-img-top">
-                                <div class="card-body">
-                                    <h4 class="card-title">Теплая кофта</h4>
-                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                        quod.</p>
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <span class="price">2199р</span>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="btn btn-primary">Купить</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="sweatshirts" class="row row-cols-1 row-cols-md-2 g-3">
+
+                        <!-- Сюда js вставит карточки -->
+
                     </div>
                 </div>
             </div>
